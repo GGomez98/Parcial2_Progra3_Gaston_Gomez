@@ -53,6 +53,7 @@ $app->group('/ventas', function (RouteCollectorProxy $group){
     $group->get('/ventas/ingresos',\VentasController::class . ':ObtenerGananciasPorDia');
     $group->get('/productos/masVendido',\VentasController::class . ':ObtenerElProductoMasVendido');
   });
+  $group->put('/modificar', \VentasController::class . ':ModificarUno');
 });
 
 $app->get('[/]', function (Request $request, Response $response) {    

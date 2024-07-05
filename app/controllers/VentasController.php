@@ -145,7 +145,42 @@ class VentasController extends Ventas implements IApiUsable
           ->withHeader('Content-Type', 'application/json');
     }
 	public function BorrarUno($request, $response, $args){}
-	public function ModificarUno($request, $response, $args){}
+	public function ModificarUno($request, $response, $args){
+        $parametros = $request->getParsedBody();
+
+        $id = $parametros['id'];
+        $nombreProducto = $parametros['producto'];
+        $email = $parametros['email'];
+        $usuario = $parametros['usuario'];
+        $tipo = $parametros['tipo'];
+        $marca = $parametros['marca'];
+        $cantidad = $parametros['cantidad'];
+
+        $venta = Ventas::ObtenerVentaPorId($id);
+
+        if($venta){
+            $prod = Tienda::VerificarAlta($nombreProducto, $marca, $tipo);
+            if($prod){
+                $venta->idProducto = $prod->id;
+                $venta->email = $email;
+                $venta->usuario = $usuario;
+                $venta->cantidad = $cantidad;
+
+                $venta->ModificarVenta($id);
+
+                $payload = json_encode(array("mensaje" => "Se modifico la venta"));
+            }else{
+                $payload = json_encode(array("mensaje" => "El producto no esta registrado"));
+            }
+        }
+        else{
+            $payload = json_encode(array("mensaje" => "La venta no esta registrada"));
+        }
+
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
     public function TraerUno($request, $response, $args){}
 	public function TraerTodos($request, $response, $args){}
 }

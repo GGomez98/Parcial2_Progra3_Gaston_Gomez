@@ -100,4 +100,23 @@ class Ventas{
 
         return $consulta->fetchAll(PDO::FETCH_NAMED);
     }
+
+    public static function ObtenerVentaPorId($id){
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM ventas where id = :id;");
+        $consulta->bindValue(':id',$id,PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetchObject('Ventas');
+    }
+
+    public function ModificarVenta(){
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("UPDATE ventas SET idProducto=:idProducto, email=:email, usuario=:usuario, cantidad=:cantidad WHERE id = :id");
+        $consulta->bindValue(':id',$this->id,PDO::PARAM_INT);
+        $consulta->bindValue(':idProducto',$this->idProducto,PDO::PARAM_INT);
+        $consulta->bindValue(':email',$this->email,PDO::PARAM_STR);
+        $consulta->bindValue(':usuario',$this->usuario,PDO::PARAM_STR);
+        $consulta->bindValue(':cantidad',$this->cantidad,PDO::PARAM_INT);
+        $consulta->execute();
+    }
 }

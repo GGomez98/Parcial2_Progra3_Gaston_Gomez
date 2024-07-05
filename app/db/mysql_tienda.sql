@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2024 a las 07:30:58
+-- Tiempo de generación: 05-07-2024 a las 08:16:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -70,7 +70,7 @@ INSERT INTO `ventas` (`id`, `fecha`, `email`, `usuario`, `idProducto`, `precio`,
 (1, '2024-07-04', 'gaston@gmail.com', 'Gaston', 2, 350000000, 500, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3100-gaston.jpeg'),
 (2, '2024-07-05', 'gaston@gmail.com', 'Gaston', 2, 350000000, 500, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3100-gaston.jpeg'),
 (3, '2024-07-05', 'gaston@gmail.com', 'Gaston', 2, 350000000, 500, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3100-gaston.jpeg'),
-(4, '2024-07-05', 'carlos@gmail.com', 'Gaston', 2, 7000000, 10, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3100-carlos.jpeg'),
+(4, '2024-07-05', 'carlos@gmail.com', 'Carlos', 2, 7000000, 5, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3100-carlos.jpeg'),
 (5, '2024-07-05', 'carlos@gmail.com', 'Gaston', 3, 1400000, 2, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3300-carlos.jpeg'),
 (6, '2024-07-05', 'carlos@gmail.com', 'Gaston', 3, 2100000, 3, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3300-carlos.jpeg'),
 (7, '2024-07-05', 'cesar@gmail.com', 'Gaston', 3, 1400000, 2, 'ImagenesDeVentas/2024/Smartphone-Nokia-Lumia 3300-cesar.jpeg'),
