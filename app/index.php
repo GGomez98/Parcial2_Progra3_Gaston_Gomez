@@ -16,7 +16,8 @@ require_once './db/AccesoDatos.php';
 // require_once './middlewares/Logger.php';
 
 require_once './controllers/UsuarioController.php';
-
+require_once './controllers/TiendaController.php';
+require_once './controllers/VentasController.php';
 // Load ENV
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
@@ -31,11 +32,28 @@ $app->addErrorMiddleware(true, true, true);
 $app->addBodyParsingMiddleware();
 
 // Routes
-$app->group('/usuarios', function (RouteCollectorProxy $group) {
-    $group->get('[/]', \UsuarioController::class . ':TraerTodos');
-    $group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-    $group->post('[/]', \UsuarioController::class . ':CargarUno');
+//$app->group('/usuarios', function (RouteCollectorProxy $group) {
+//    $group->get('[/]', \UsuarioController::class . ':TraerTodos');
+//    $group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+//    $group->post('[/]', \UsuarioController::class . ':CargarUno');
+//  });
+
+$app->group('/tienda', function (RouteCollectorProxy $group){
+    $group->post('/alta', \TiendaController::class . ':CargarUno');
+    $group->post('/consultar',\TiendaController::class . ':ConsultarProducto');
+});
+
+$app->group('/ventas', function (RouteCollectorProxy $group){
+  $group->post('/alta', \VentasController::class . ':CargarUno');
+  $group->group('/consultar',function (RouteCollectorProxy $group){
+    $group->get('/productos/vendidos',\VentasController::class . ':ConsultarProductosVendidos');
+    $group->get('/ventas/porUsuario',\VentasController::class . ':ObtenerVentasPorUsuario');
+    $group->get('/ventas/porProducto',\VentasController::class . ':ObtenerVentasPorProducto');
+    $group->get('/productos/entreValores',\VentasController::class . ':ObtenerVentasEntreValores');
+    $group->get('/ventas/ingresos',\VentasController::class . ':ObtenerGananciasPorDia');
+    $group->get('/productos/masVendido',\VentasController::class . ':ObtenerElProductoMasVendido');
   });
+});
 
 $app->get('[/]', function (Request $request, Response $response) {    
     $payload = json_encode(array("mensaje" => "Slim Framework 4 PHP"));

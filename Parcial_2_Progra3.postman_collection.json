@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "4a54787e-3f93-4def-929f-cad087693abb",
+		"name": "Parcial_2_Progra3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27785480"
+	},
+	"item": [
+		{
+			"name": "01-Dar de alta un producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/tienda/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"tienda",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-Verificar si un producto existe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3100",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/tienda/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"tienda",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-Cargar Venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "producto",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "cesar@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "usuario",
+							"value": "Gaston",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/user_icon_001.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-Consultar ventas por día",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/productos/vendidos?fecha=2024-07-05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"productos",
+						"vendidos"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2024-07-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08-Consultar ganancias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/ventas/ingresos?fecha=2024-07-04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"ventas",
+						"ingresos"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2024-07-04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09-Obtener producto mas vendido",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/productos/masVendido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"productos",
+						"masVendido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-Listar ventas por usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/ventas/porUsuario?email=carlos@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"ventas",
+						"porUsuario"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "carlos@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06-Listar ventas por tipo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/ventas/porProducto?tipo=Smartphone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"ventas",
+						"porProducto"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "Smartphone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07-Listar ventas entre precios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lumia 3300",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "700000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "Smartphone",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Nokia",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/a24-frente1-c836181795b66df5f616843353932240-640-0.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/ventas/consultar/productos/entreValores?min=0&max=10000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"ventas",
+						"consultar",
+						"productos",
+						"entreValores"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "0"
+						},
+						{
+							"key": "max",
+							"value": "10000000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
